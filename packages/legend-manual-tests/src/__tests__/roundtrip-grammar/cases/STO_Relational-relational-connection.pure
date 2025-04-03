@@ -340,7 +340,6 @@ RelationalDatabaseConnection connection::relational::ConnectionWithQueryConfigs1
     GenerationFeaturesConfig
     {
       enabled: ['REMOVE_UNION_OR_JOINS'];
-      disabled: [];
     }
   ];
 }
@@ -356,7 +355,6 @@ RelationalDatabaseConnection connection::relational::ConnectionWithQueryConfigs2
   queryGenerationConfigs: [
     GenerationFeaturesConfig
     {
-      enabled: [];
       disabled: ['REMOVE_UNION_OR_JOINS'];
     }
   ];
