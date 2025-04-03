@@ -327,3 +327,35 @@ RelationalDatabaseConnection connection::relational::BigQueryWithProxy
   };
   auth: GCPApplicationDefaultCredentials;
 }
+
+RelationalDatabaseConnection connection::relational::ConnectionWithQueryConfigs1
+{
+  store: store::db;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+  queryGenerationConfigs:[
+    GenerationFeaturesConfig
+    {
+      enabled: ['REMOVE_UNION_OR_JOINS'];
+    }
+  ];
+}
+
+RelationalDatabaseConnection connection::relational::ConnectionWithQueryConfigs2
+{
+  store: store::db;
+  type: H2;
+  specification: LocalH2
+  {
+  };
+  auth: DefaultH2;
+  queryGenerationConfigs:[
+    GenerationFeaturesConfig
+    {
+      disabled: ['REMOVE_UNION_OR_JOINS'];
+    }
+  ];
+}
